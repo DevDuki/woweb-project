@@ -4,6 +4,7 @@ const JourneyStop = ({ station, incidence }) => {
   return (
     <tr>
       <td>{station}</td>
+      <td>{station}</td>
       <td>{incidence}</td>
     </tr>
   )
