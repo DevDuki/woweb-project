@@ -26,9 +26,7 @@ const kantonsServices = {
 
 
 
-const App = () => {  
-
-  
+const App = () => { 
 
   const [departureLoc, setDepartureLoc] = useState('')
   const [arrivalLoc, setArrivalLoc] = useState('')
@@ -69,12 +67,10 @@ const App = () => {
             municipalityName: d.attributes.gemname
           }
         })
-        setMunicipality(municipalityData)
+        setMunicipality(municipalityData)  
       }
     })
   }, [])
-
-
 
   useEffect(() => {
     if(!boolean) return
@@ -117,8 +113,6 @@ const App = () => {
         .catch(err => console.error(err))
     })
   }
-  
-  
 
   const styleObj = {
     maxWidth: "100vw",
@@ -140,7 +134,7 @@ const App = () => {
       />
       <JourneyForm updateJourneyDetails={handleSubmit} setDepartureLoc={setDepartureLoc} setArrivalLoc={setArrivalLoc} setDate={setDate} />
       <div id="mapcontainer" style={styleObj}></div>
-      <JourneyContainer content={tableContent} departureLoc={departureLoc} arrivalLoc={arrivalLoc} />
+      <JourneyContainer content={tableContent} from={departureLoc} to={arrivalLoc} date={date} />
     </Container>  
   );
 }

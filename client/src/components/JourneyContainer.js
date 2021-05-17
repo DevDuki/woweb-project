@@ -3,17 +3,16 @@ import { Table } from 'reactstrap'
 import JourneyTableElement from './JourneyTableElement'
 
 
-const JourneyContainer = ({ content, departureLoc, arrivalLoc }) => {
+const JourneyContainer = ({ content, from, to, date }) => {
 
   const incidences = content.map(contentElement => contentElement.incidences.incidence)
   const highestIncidence = Math.max(...incidences)
 
-  console.log('highest', highestIncidence)
 
   return (
     <>
-      <h2 style={{ marginTop: '2rem' }}>Haltestellentabelle</h2>
-      <p>Von {departureLoc} bis {arrivalLoc}</p>
+      <h2 style={{ marginTop: '2rem' }}>Inzidenzentabelle</h2>
+      <p>{date ? `Von ${from} nach ${to} am ${date.substr(8,2)}.${date.substr(5,2)}.${date.substr(0,4)}` : 'Bitte wählen Sie eine Route aus'}</p>
       <Table>
         <thead>
           <tr>

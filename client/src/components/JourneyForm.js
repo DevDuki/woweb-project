@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Form,
   Row,
@@ -32,6 +32,7 @@ const JourneyForm = ({ updateJourneyDetails, setDepartureLoc, setArrivalLoc, set
               name="departureLoc" 
               id="departureLoc" 
               placeholder="Abfahrtsort" 
+              required
             />
           </FormGroup>
         </Col>
@@ -43,6 +44,7 @@ const JourneyForm = ({ updateJourneyDetails, setDepartureLoc, setArrivalLoc, set
               type="text" name="arrivalLoc" 
               id="arrivalLoc" 
               placeholder="Ankunftsort" 
+              required
             />
           </FormGroup>
         </Col>
@@ -50,13 +52,14 @@ const JourneyForm = ({ updateJourneyDetails, setDepartureLoc, setArrivalLoc, set
       <Row form>
         <Col md={3}>
           <FormGroup>
-          <Label for="exampleDate">Date</Label>
+          <Label for="date">Date</Label>
           <Input
             onChange={updateDate}
             type="date"
             name="date"
-            id="exampleDate"
+            id="date"
             placeholder="date placeholder"
+            required
           />
           </FormGroup>
         </Col>
